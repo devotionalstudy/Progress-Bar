@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #progressBar{
+            width: 100%;
+            background-color: #dddddd;
+        }
+        #bar{
+            width: 10%;
+            height: 30px;
+            background-color: blueviolet;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1> Javascript Progress Bar</h1>
+
+<div id="progressBar">
+    <div id="bar">10%</div>
+</div>
+
+<br>
+<button onclick="showProgress()">Start Progress</button>
+</body>
+
+
+<script>
+
+    var i = 0;
+    function showProgress() {
+
+
+        if(i ==0){
+            i=1;
+            var element = document.getElementById('bar');
+            var width = 10;
+            var id = setInterval(screen , 10);
+
+
+
+            function screen() {
+                if(width>=100){
+                    clearInterval(id);
+                    i=0;
+                }
+                else{
+                    width++;
+                    element.style.width = width +"%";
+                    element.innerHTML = width + "%";
+                }
+            }
+
+
+        }
+    }
+
+
+
+
+
+
+</script>
+</html>
